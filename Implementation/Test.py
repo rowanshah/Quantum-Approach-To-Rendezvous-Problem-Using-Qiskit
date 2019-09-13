@@ -1,10 +1,20 @@
 #%%
+import logging
 import numpy as np
-from qiskit import IBMQ, BasicAer
-from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister, execute
-from qiskit.providers.ibmq import least_busy
-import matplotlib.pyplot as plt
+import operator
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister, execute, Aer
 from qiskit.tools.visualization import plot_histogram
+from qiskit import ClassicalRegister, QuantumCircuit, QuantumRegister
+from qiskit.qasm import pi
+from qiskit.aqua import AquaError, Pluggable, PluggableType, get_pluggable_class
+from qiskit.aqua.utils import get_subsystem_density_matrix
+from qiskit.aqua.algorithms import QuantumAlgorithm
+from qiskit.aqua.components.initial_states import Custom
+from qiskit.aqua.circuits.gates import mct
+from qiskit import IBMQ, BasicAer
+from qiskit.providers.ibmq import least_busy
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister, execute
+
 def oracle(maze, alice_room, bob_room, q_oracle):
     maze.cx(alice_room[0], bob_room[0])
     maze.x(bob_room[1])
@@ -21,6 +31,7 @@ def oracle(maze, alice_room, bob_room, q_oracle):
     maze.cx(alice_room[0], bob_room[0])
     maze.barrier()
     #maze.draw(output='mpl', filename='oracle')
+
 def phase_bob(maze, bob_room):
     maze.h(bob_room)
     maze.x(bob_room)
@@ -33,6 +44,7 @@ def phase_bob(maze, bob_room):
     maze.h(bob_room)
     maze.barrier()
     maze.draw(output='mpl', filename='bob_image')
+
 def phase_alice(maze, alice_room):
     maze.h(alice_room)
     maze.x(alice_room)
@@ -45,6 +57,7 @@ def phase_alice(maze, alice_room):
     maze.h(alice_room)
     maze.barrier()
     maze.draw(output='mpl', filename='alice_image')
+
 def state_preparation(n_rooms):
     n = int(np.ceil(np.log2(n_rooms)))
     alice_room = QuantumRegister(n)
@@ -64,9 +77,10 @@ def state_preparation(n_rooms):
     maze.barrier()
     #maze.draw(output='mpl', filename='state_preparation')
     return maze, alice_room, bob_room, q_oracle, c_alice, c_bob
+
 def rendezvous(n_rooms, n_iteration):
     maze, alice_room, bob_room, q_oracle, c_alice, c_bob = state_preparation(n_rooms)
-    for i in range(n_iteration):
+    for i in range(int(n_iteration/2)):
         oracle(maze, alice_room, bob_room, q_oracle)
         phase_bob(maze, bob_room)
         oracle(maze, alice_room, bob_room, q_oracle)
@@ -81,16 +95,8 @@ def rendezvous(n_rooms, n_iteration):
     counts = execute(maze, backend).result().get_counts()
     print(counts)
     print("done!")
-    print("number of iterations: ", n_iteration)
-    return counts
-n_iteration = 2
-counts = rendezvous(4, n_iteration)
-count_value = [counts.get(k) for k in counts.keys()]
-count_label = [k for k in counts.keys()]
-x = np.arange(len(counts))
-plt.bar(x, height=count_value)
-plt.xticks(x, count_label)
-plt.title('Number of iterations: '+str(n_iteration))
+rendezvous(4,7)
+
 
 
 
