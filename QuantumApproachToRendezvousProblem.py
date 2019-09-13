@@ -205,7 +205,26 @@ def _run(self):
 
 
 #%%
-
+import numpy as np
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister, execute
+n_rooms = 4
+n = int(np.ceil(np.log2(n_rooms)))
+alice_room = QuantumRegister(n)
+bob_room = QuantumRegister(n)
+maze =  QuantumCircuit(alice_room)
+maze.add_register(bob_room)
+def same_room_oracle(maze, alice_room, bob_room):
+    q_room_number = QuantumRegister(alice_room.size)
+    print(q_room_number.size)
+    c_room_number = ClassicalRegister(alice_room.size)
+    maze.add_register(q_room_number)
+    maze.add_register(c_room_number)
+    for i in range(n):
+        maze.cx(alice_room[i], q_room_number[i])
+        maze.cx(bob_room[i], q_room_number[i])
+    maze.measure(q_room_number, c_room_number)
+    print(maze)
+same_room_oracle(maze, alice_room, bob_room)
 
 
 #%%
