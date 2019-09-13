@@ -35,9 +35,9 @@ At this point we have prepared our state and we are ready to start our Grover Se
 
 We also implemented Grover's algorithm for 4 Quibits and the results are located in the folder "Grover's Algorithm"
 
-Our solution has been implemented and can be seen in the python script - Rendezvous.py. This was the circuit we built.
+Our solution has been implemented and can be seen in the python script - Rendezvous.py in the Solution folder. This was the circuit we built.
 
-![circuit](maincircuit.png)
+![circuit](Solution/maincircuit.png)
 
 A special shoutout to the Qiskit team for all the support throughout this event. Another special mention to the [Qiskit textbook](https://community.qiskit.org/textbook/) which has brilliantly described and illustrated how to build a circuit implementin Grover's search algorithm using the Qiskit resources. 
 
