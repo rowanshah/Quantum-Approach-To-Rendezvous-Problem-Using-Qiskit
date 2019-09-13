@@ -33,7 +33,7 @@ The algorithm starts by preparing an input state. We start with our qubits all i
 
 At this point we have prepared our state and we are ready to start our Grover Search to amplify the case where Alice and Bob are sitting on the same vertex.
 
-We also implemented Grover's algorithm for 4 Quibits and the results are located in the folder "Grover's Algorithm"
+We also implemented Grover's algorithm for 6 Quibits (4 logical and 2 ancilla) and the results are located in the folder "Grover's Algorithm"
 
 Our solution has been implemented and can be seen in the python script - Rendezvous.py in the Solution folder. This was the circuit we built.
 
