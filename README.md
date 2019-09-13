@@ -1,4 +1,4 @@
-# Qiskit-Quantum-Approach-To-Rendezvous-Probelem
+# Quantum Approach to the Rendezvous Problem using Qiskit
 This is the repository for Team Rendezvous at the Qiskit Camp 2019 taking place in Mürren, Switzerland. 
 
 ## Qiskit Camp 
@@ -30,9 +30,13 @@ The algorithm starts by preparing an input state. We start with our qubits all i
 
 At this point we have prepared our state and we are ready to start our Grover Search to amplify the case where Alice and Bob are sitting on the same vertex.
 
+We also implemented Grover's algorithm for 4 Quibits and the results are located in the folder "Grover's Algorithm"
 
+Our solution has been implemented and can be seen in the python script - Rendezvous.py located in the Implementation folder. This was the circuit we built.
 
+![circuit](Implementation/circuit.png)
 
+A special shoutout to the Qiskit team for all the support throughout this event. Another special mention to the [Qiskit textbook](https://community.qiskit.org/textbook/) which has brilliantly described and illustrated how to build a circuit implementin Grover's search algorithm using the Qiskit resources. 
 
 
 
