@@ -83,7 +83,7 @@ def rendezvous(n_rooms, n_iteration):
     print("done!")
     print("number of iterations: ", n_iteration)
     return counts
-n_iteration = 2
+n_iteration = 4
 counts = rendezvous(4, n_iteration)
 count_value = [counts.get(k) for k in counts.keys()]
 count_label = [k for k in counts.keys()]
