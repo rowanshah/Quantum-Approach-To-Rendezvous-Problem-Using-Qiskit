@@ -14,7 +14,7 @@ Here is a picture of our team hard at work:
 ![Team](Images/Team.jpg)
 
 ## The Classical Rendezvous Connundrum 
-The aim is to build on a quantum advantage by using Grover's algorithm to the Rendezvous Problem. The problem is as follows: Alice & Bob, two 20 year olds have agreed to meet at a park. The only details they have before hand is the date and time of their meeting and a pre-agreed strategy on how they'll find each other. Once Alice and Bob arive at the park, they have no means of communicating with each other. The connundrum they face is based on the method of finding each other, which route would lead to the best possible probability of findind the other? How much time would that take? Should they wait before they start or wait at any point during their search?
+The aim is to build on a quantum advantage by using Grover's algorithm to the Rendezvous Problem. The problem is as follows: Alice & Bob, two 20-year-olds, have agreed to meet at a park. The only details they have before hand is the date and time of their meeting and a pre-agreed strategy on how they'll find each other. Once Alice and Bob arive at the park, they have no means of communicating with each other. The connundrum they face is based on the method of finding each other, which route would lead to the best possible probability of findind the other? How much time would that take? Should they wait before they start or wait at any point during their search?
 
 The idea and process behind the classical approach is described in detail in this [research paper](https://epubs.siam.org/doi/10.1137/S0363012993249195).
 
@@ -24,7 +24,11 @@ Our maze in this case was the complete graph on four vertices, K<sub>4</sub> and
 
 ## The Implementation
 Our two quantum parties, Alice and Bob have qubit registers comprised of 2 qubits each which encode their positions at vertices on K<sub>4</sub>. Additionally ancillary qubits are used to implement our oracle.
-The algorithm starts by preparing an input state. We start with our qubits all in the |0> state, their tensor product being the input state. We then take a superposition over all the possible locations on the graph by applying a Hadamard gate acroos the initial state. At this point we have prepared our state and we are ready to start our Grover Search to amplify the case where Alice and Bob are sitting on the same vertex.
+The algorithm starts by preparing an input state. We start with our qubits all in the |0> state, their tensor product being the input state. We then take a superposition over all the possible locations on the graph by applying a Hadamard gate across the initial state. 
+
+ ![plot](Images/plot.png)
+
+At this point we have prepared our state and we are ready to start our Grover Search to amplify the case where Alice and Bob are sitting on the same vertex.
 
 
 
