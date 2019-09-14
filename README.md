@@ -13,7 +13,8 @@ A few pictures of the hackathon & the beautiful city of Mürren:
 Here is a picture of our team hard at work: 
 ![Team](Images/Team.jpg)
 
-When the algorithm works: 
+A picture of the team after the algorithm worked! 
+
 ![Team2](Images/Team2.jpg)
 
 ## The Classical Rendezvous Conundrum 
@@ -24,6 +25,10 @@ The idea and process behind the classical approach is described in detail in thi
 ## Our Problem
 After seeing that it was going to be very limiting to attack the classical problem with no communication since it would have prevented us from using entangled qubits, we decided to pivot and make the problem cooler. Instead of creating an algorithm which two parties could independently apply in a maze to find each other we created an algorithm which would bring two quantum parties together. Think of it as an algorithm applied by some God with access to a quantum computer to bring the quantum particles together.
 Our maze in this case was the complete graph on four vertices, K<sub>4</sub> and after spawning Alice and Bob at two different spots on K<sub>4</sub> it was the god's job to make sure they end up in the same spot with some definite probability.
+
+The picture below illustrates graphically the problem we endeavoured to solve.
+
+![problem](Images/problem.png)
 
 ## The Implementation
 Our two quantum parties, Alice and Bob have qubit registers comprised of 2 qubits each which encode their positions at vertices on K<sub>4</sub>. Additionally ancillary qubits are used to implement our oracle.
@@ -38,6 +43,9 @@ We also implemented Grover's algorithm for 6 Quibits (4 logical and 2 ancilla) a
 Our solution has been implemented and can be seen in the python script - Rendezvous.py in the Solution folder. This was the circuit we built.
 
 ![circuit](Solution/maincircuit.png)
+
+
+This [lecture](https://www.scottaaronson.com/qclec/22.pdf) on Grover's algorithm further explains how our algorithm works
 
 A special shoutout to the Qiskit team for all the support throughout this event. Another special mention to the [Qiskit textbook](https://community.qiskit.org/textbook/) which has brilliantly described and illustrated how to build a circuit implementin Grover's search algorithm using the Qiskit resources. 
 

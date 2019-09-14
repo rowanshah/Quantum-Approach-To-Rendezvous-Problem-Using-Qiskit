@@ -1,5 +1,5 @@
 #%%
-#Working algorithm
+#Test script
 import numpy as np
 from qiskit import IBMQ, BasicAer
 from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister, execute
@@ -52,6 +52,7 @@ def state_preparation(n_rooms):
     bob_room = QuantumRegister(n)
     maze = QuantumCircuit(alice_room)
     maze.add_register(bob_room)
+    #maze.z(alice_room[1])
     maze.h(alice_room)
     maze.h(bob_room)
     q_oracle = QuantumRegister(alice_room.size)
@@ -75,11 +76,10 @@ def rendezvous(n_rooms, n_iteration):
     maze.measure(alice_room, c_alice)
     maze.measure(bob_room, c_bob)
     maze.draw(output='mpl', filename='maze_last')
-    # Load on real device
-    IBMQ.load_account()
-    provider = IBMQ.get_provider(hub='ibm-q')
-    backend = least_busy(provider.backends(simulator=True))
-    counts = execute(maze, backend).result().get_counts()
+    #Testing on local device
+    backend = BasicAer.get_backend('qasm_simulator')
+    shots = 1024
+    counts = execute(maze, backend=backend, shots=shots).result().get_counts()
     print(counts)
     print("done!")
     print("number of iterations: ", n_iteration)
