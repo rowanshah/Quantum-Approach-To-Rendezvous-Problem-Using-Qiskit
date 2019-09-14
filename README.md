@@ -6,16 +6,16 @@ Qiskit is an open-source quantum computing framework for leveraging today's quan
 
 A few pictures of the hackathon & the beautiful city of Mürren:
 
-![Murren1](Images/Murren1.jpg)
-![Murren2](Images/Murren2.jpg)
-![Hackathon](Images/Hackathon.jpg)
+![Murren1](Miscallaneous/Murren1.jpg)
+![Murren2](Miscallaneous/Murren2.jpg)
+![Hackathon](Miscallaneous/Hackathon.jpg)
 
 Here is a picture of our team hard at work: 
-![Team](Images/Team.jpg)
+![Team](Miscallaneous/Team.jpg)
 
 A picture of the team after the algorithm worked! 
 
-![Team2](Images/Team2.jpg)
+![Team2](Miscallaneous/Team2.jpg)
 
 ## The Classical Rendezvous Conundrum 
 The aim is to build on a quantum advantage by using Grover's algorithm to the Rendezvous Problem. The problem is as follows: Alice & Bob, two 20-year-olds, have agreed to meet at a park. The only details they have before hand is the date and time of their meeting and a pre-agreed strategy on how they'll find each other. Once Alice and Bob arive at the park, they have no means of communicating with each other. The connundrum they face is based on the method of finding each other, which route would lead to the best possible probability of findind the other? How much time would that take? Should they wait before they start or wait at any point during their search?
@@ -28,13 +28,13 @@ Our maze in this case was the complete graph on four vertices, K<sub>4</sub> and
 
 The picture below illustrates graphically the problem we endeavoured to solve.
 
-![problem](Images/problem.png)
+![problem](Miscallaneous/problem.png)
 
 ## The Implementation
 Our two quantum parties, Alice and Bob have qubit registers comprised of 2 qubits each which encode their positions at vertices on K<sub>4</sub>. Additionally ancillary qubits are used to implement our oracle.
 The algorithm starts by preparing an input state. We start with our qubits all in the |0> state, their tensor product being the input state. We then take a superposition over all the possible locations on the graph by applying a Hadamard gate across the initial state. 
 
- ![plot](Images/plot.png)
+ ![plot](Miscallaneous/plot.png)
 
 At this point we have prepared our state and we are ready to start our Grover Search to amplify the case where Alice and Bob are sitting on the same vertex.
 
