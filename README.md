@@ -34,21 +34,26 @@ This circuit below shows visually what our algorithm is in terms of quantum gate
 ![circuit](Solution/maincircuit.png)
 We start by putting Alice and Bob in a superposition over the whole graph, preparing them for iterations of Grover's Search.
 
-We then apply Grover's Search where our oracle takes the input state and marks the states where the two registers are together, a phase is then applied to amplify these cases. This has to be carried out over each register and creates a special case of Grover's where the number of iterations 
+We then apply Grover's Search where our oracle takes the input state and marks the states where the two registers are together, a phase is then applied to amplify these cases. This has to be carried out over each register and creates a special case of Grover's where the number of iterations has to be #I = π/4 times sqrt(N), rounded up, where N is the number of nodes on the graph. 
+
+Therefore to achieve the states we want, these iterations are applied on Alice and Bob's registers, giving #I/2 for each participant. We also found that the order of these iterations is irrelevant.
 
 ## Results
 
-Our solution was implemented in the python script - Rendezvous.py in the Solution folder.
+Our solution was implemented in the python script - Rendezvous.py in the Solution folder. 
 
+Below you see the result given for 1024 shots over different numbers of iterations of our algorithm, at the end giving a comparison of the likelihood that the algorithm is successfull in producing maximally entangled states.
 ![2Iterations](Solution/Plots/2iterations.png)
 
 ![8Iterations](Solution/Plots/8iterations.png)
 
 ![SuccessProbability](Solution/SuccessProbability.png)
 
+This shows that if the algorithm is applied #I times on each register we return to the initial product state.
+
 ## Future Work and Applications
 
-Whilst our method is currently specific to complete Graphs we can generalise to classes which are not by make use of a time evolution operator based on the adjacency matrix of the graph, i.e. e<sup>iAt</sup>.  Our algorithm produces **maximally entangled states** giving it the ability to be used in state preparation for state preparation in contexts where this required such as cryptography.
+Whilst our method is currently specific to complete Graphs we can generalise to classes which are not by making use of a time evolution operator based on the adjacency matrix of the graph, i.e. e<sup>iAt</sup>.  Our algorithm produces **maximally entangled states** giving it the ability to be used in state preparation for state preparation in contexts where this required such as cryptography.
 
 
 ## Thanks
