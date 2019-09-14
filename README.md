@@ -40,9 +40,9 @@ We then apply Grover's Search where our oracle takes the input state and marks t
 
 Our solution was implemented in the python script - Rendezvous.py in the Solution folder.
 
-![2Iterations](Solution/Plots/2 iterations.png)
+![2Iterations](Solution/Plots/2iterations.png)
 
-![8Iterations](Solution/Plots/8 iterations.png)
+![8Iterations](Solution/Plots/8iterations.png)
 
 ![SuccessProbability](Solution/SuccessProbability.png)
 
