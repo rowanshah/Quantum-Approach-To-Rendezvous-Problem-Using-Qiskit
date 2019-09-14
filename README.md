@@ -32,18 +32,20 @@ The picture below illustrates the set up of the problem.
 
 ## The Implementation
 ![circuit](Solution/maincircuit.png)
+We start by putting Alice and Bob in a superposition over the whole graph, preparing them for iterations of Grover's Search.
 
- ![plot](Miscallaneous/plot.png)
+We then apply Grover's Search where our oracle takes the input state and marks the states where the two registers are together, a phase is then applied to amplify these cases.
 
-At this point we have prepared our state and we are ready to start our Grover Search to amplify the cases where Alice and Bob are sitting on the same vertex.
+## Results
 
-Our oracle takes an input state and marks the states where the two registers are together, a phase is then applies to amplify these cases.
+Our solution was implemented in the python script - Rendezvous.py in the Solution folder 
 
-Our solution has been implemented and can be seen in the python script - Rendezvous.py in the Solution folder. This was the circuit we built.
-
-This [lecture](https://www.scottaaronson.com/qclec/22.pdf) on Grover's algorithm further explains how our algorithm works
+## Thanks
 
 A special shoutout to the Qiskit team for all the support throughout this event. Another special mention to the [Qiskit textbook](https://community.qiskit.org/textbook/) which gave us a starting point to build a circuit implementing Grover's search algorithm.
+
+
+
 
 
 
