@@ -4,13 +4,12 @@ This is the repository for Team Rendezvous at the Qiskit Camp 2019 taking place 
 ## Qiskit Camp 
 Qiskit is an open-source quantum computing framework for leveraging today's quantum processors in research, education, and business. Qiskit Camp is a community event organised by IBM where experts in Quantum Computing, students, artists and people from all walks of life come together to have fun and do some quantum together.
 
-A few pictures of the hackathon & the beautiful city of Mürren:
+Here is a pictures of the the beautiful city of Mürren:
 
 ![Murren1](Miscallaneous/Murren1.jpg)
-![Murren2](Miscallaneous/Murren2.jpg)
-![Hackathon](Miscallaneous/Hackathon.jpg)
 
 Here is a picture of our team hard at work: 
+
 ![Team](Miscallaneous/Team.jpg)
 
 A picture of the team after the algorithm worked! 
@@ -39,7 +38,14 @@ We then apply Grover's Search where our oracle takes the input state and marks t
 
 ## Results
 
-Our solution was implemented in the python script - Rendezvous.py in the Solution folder 
+Our solution was implemented in the python script - Rendezvous.py in the Solution folder.
+
+![2Iterations](Solution/Plots/2 iterations.png)
+
+![8Iterations](Solution/Plots/8 iterations.png)
+
+![SuccessProbability](Solution/SuccessProbability.png)
+
 
 ## Thanks
 
