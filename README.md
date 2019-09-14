@@ -31,6 +31,7 @@ The picture below illustrates the set up of the problem.
 ![problem](Miscallaneous/problem.png)
 
 ## The Implementation
+This circuit below shows visually what our algorithm is in terms of quantum gates.
 ![circuit](Solution/maincircuit.png)
 We start by putting Alice and Bob in a superposition over the whole graph, preparing them for iterations of Grover's Search.
 
