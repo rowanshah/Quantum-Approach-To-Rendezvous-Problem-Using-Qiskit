@@ -34,7 +34,7 @@ This circuit below shows visually what our algorithm is in terms of quantum gate
 ![circuit](Solution/maincircuit.png)
 We start by putting Alice and Bob in a superposition over the whole graph, preparing them for iterations of Grover's Search.
 
-We then apply Grover's Search where our oracle takes the input state and marks the states where the two registers are together, a phase is then applied to amplify these cases.
+We then apply Grover's Search where our oracle takes the input state and marks the states where the two registers are together, a phase is then applied to amplify these cases. This has to be carried out over each register and creates a special case of Grover's where the number of iterations 
 
 ## Results
 
@@ -45,6 +45,10 @@ Our solution was implemented in the python script - Rendezvous.py in the Solutio
 ![8Iterations](Solution/Plots/8iterations.png)
 
 ![SuccessProbability](Solution/SuccessProbability.png)
+
+## Future Work and Applications
+
+Whilst our method is currently specific to complete Graphs we can generalise to classes which are not by make use of a time evolution operator based on the adjacency matrix of the graph, i.e. e<sup>iAt</sup>.  Our algorithm produces **maximally entangled states** giving it the ability to be used in state preparation for state preparation in contexts where this required such as cryptography.
 
 
 ## Thanks
